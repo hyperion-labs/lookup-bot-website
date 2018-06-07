@@ -1,4 +1,15 @@
+// colors
+$black: #363636;
+
+// globals
+
+body {
+  font-family: 'Roboto', 'Open Sans';
+}
+
+//
+
 #test {
-  color: green;
+  color: $black;
 }
 
