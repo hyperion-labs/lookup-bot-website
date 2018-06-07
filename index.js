@@ -29,10 +29,10 @@ app.post('/signupWaitlist', (req, res) => {
   const { email } = req.body;
   mailchimp.subscribe(email)
     .then(() => {
-      res.send('Worked!');
+      res.send("Thanks for signing up! We'll let you send you an invite to the beta in the coming weeks!");
     })
     .catch((err) => {
-      res.send('Didnt work -_-');
+      res.send('Ah sorry, this email has already been signed up!');
     });
 });
 
