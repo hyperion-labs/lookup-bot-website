@@ -31,7 +31,7 @@ app.post('/signupWaitlist', (req, res) => {
     .then(() => {
       res.send("Thanks for signing up! We'll let you send you an invite to the beta in the coming weeks!");
     })
-    .catch((err) => {
+    .catch(() => {
       res.send('Ah sorry, this email has already been signed up!');
     });
 });
