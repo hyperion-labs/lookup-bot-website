@@ -1,15 +1,104 @@
+/* Variables ================================== */
 // colors
 $black: #363636;
+$greyTitle: #999895;
+$bodyBg: #FFFDF8;
+$inputBg: #F4F4F4;
+$colorPrimary: #3382F6;
 
-// globals
+// sizes
+$gutter: 92px;
+
+/* Globals ================================== */
 
 body {
   font-family: 'Roboto', 'Open Sans';
+  background-color: $bodyBg;
 }
 
-//
-
-#test {
-  color: $black;
+/* General ================================== */
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0px 32px;
+  //background-color: lightgrey;
 }
 
+/* Navigation ================================== */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.coName {
+  font-size: 33px;
+  font-weight: bold;
+  margin-top: 32px;
+}
+
+/* Jumbotron ================================== */
+.jumbotron {
+  padding: 3rem 0px 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info, .graphic {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin: 1.5rem 0px;
+  color: $greyTitle;
+  font-size: 1.25rem;
+  line-height: 1.4  ;
+  font-weight: normal;
+}
+
+.graphic img {
+  max-width: 100%;
+}
+
+// form
+.inputText {
+  border: none;
+  padding: 12px 16px;
+  background-color: $inputBg;
+  border-radius: 8px;
+}
+
+.buttonSubmit {
+  background-color: $colorPrimary;
+  padding: 12px 16px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 400;
+  color: white;
+}
+
+/* MEDIA QUERIES ================================== */
+
+// 700 horizontal breakpoint
+@media screen and (min-width: 700px) {
+
+  .title, .subtitle {
+    padding-right: 20%;
+  }
+
+  .jumbotron {
+    padding-top: 2rem;
+    flex-direction: row;
+  }
+  
+  .subtitle {
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+  }
+}

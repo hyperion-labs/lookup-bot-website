@@ -15,11 +15,38 @@
   
   <!-- Scripts -->
   <script type="text/javascript" src="/js/main.js" defer></script>
-
 </head>
+
+<!-- BODY -->
 <body>
+
+  <!-- content -->
   <div class="container">
-      <h1 id="test">Hello world! again</h1>
-  </div>
+
+    <!-- navigation -->
+    <nav class="navbar">
+      <div class="coName">Lookup Bot</div>
+    </nav>
+
+    <!-- Section Jumbotron -->
+    <div class="jumbotron">
+
+      <div class="info">
+        <div class="title">Easily look up 
+            stuff from your spreadsheets</div>
+        <div class="subtitle">Google Sheets and Airtable has all your information, but you need it faster. Use chat interfaces for quicker access.</div>
+        <form action="/signupWaitlist" method="POST" id="formWaitlistMain">
+          <input type="email" name="email" placeholder="Enter your email" class="inputText">
+          <input type="submit" value="Join Waitlist" class="buttonSubmit">
+        </form>
+      </div>
+
+      <div class="graphic">
+        <img src="/img/graphic.png" alt="Image of spreadsheets to chat apps">
+      </div>
+    </div>
+
+  </div><!-- Container close -->
 </body>
+
 </html>
