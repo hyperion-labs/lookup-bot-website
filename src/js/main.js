@@ -1,6 +1,6 @@
 /* Global Variables ==================================================================== */
 // constants
-const isLogging = false;
+const isLogging = true;
 
 // DOM
 const formWaitlistMain = document.querySelector('#formWaitlistMain');
@@ -15,7 +15,7 @@ const showElement = elem => elem.classList.remove('inactive');
 /* Email Submission ==================================================================== */
 // is input an email?
 const checkIfInputIsEmail = (input) => {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const isEmail = re.test(String(input).toLowerCase());
   return isEmail;
 };
@@ -36,14 +36,19 @@ buttonSubmitEmail.addEventListener('click', (e) => {
     makeError('You must enter a valid email.');
   } else {
     hideElement(errorEmail);
+    if (isLogging) {
+      fbq('track', 'CompleteRegistration');
+      amplitude.getInstance().logEvent(
+        'EMAIL_SIGNUP',
+        { email: input },
+      );
+    }
     formWaitlistMain.submit();
   }
 });
 
 /* Tracking ==================================================================== */
-// facebook
-if (isLogging) fbq('track', 'PageView');
-
-buttonSubmitEmail.addEventListener('click', () => {
-  if (isLogging) fbq('track', 'CompleteRegistration');
-});
+if (isLogging) {
+  fbq('track', 'PageView');
+  amplitude.getInstance().logEvent('PAGE_VIEW');
+}
