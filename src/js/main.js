@@ -1,6 +1,6 @@
 /* Global Variables ==================================================================== */
 // constants
-const isLogging = false;
+const isLogging = true;
 
 // DOM
 const formWaitlistMain = document.querySelector('#formWaitlistMain');
