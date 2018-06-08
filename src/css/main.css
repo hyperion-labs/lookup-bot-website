@@ -4,6 +4,17 @@
   font-weight: 400;
   margin-top: 32px; }
 
+.buttonSubmit {
+  background-color: #3382F6;
+  padding: 12px 16px;
+  margin-top: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 400;
+  color: white;
+  width: 75%;
+  max-width: 200px; }
+
 /* Globals ================================== */
 body {
   font-family: 'Roboto', 'Open Sans';
@@ -65,17 +76,6 @@ body {
   padding: 12px 16px;
   background-color: #F4F4F4;
   border-radius: 8px;
-  width: 75%;
-  max-width: 200px; }
-
-.buttonSubmit {
-  background-color: #3382F6;
-  padding: 12px 16px;
-  margin-top: 0.5rem;
-  text-align: center;
-  border-radius: 8px;
-  font-weight: 400;
-  color: white;
   width: 75%;
   max-width: 200px; }
 

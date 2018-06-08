@@ -16,6 +16,18 @@ $gutter: 92px;
   margin-top: 32px;
 }
 
+%button {
+  background-color: $colorPrimary;
+  padding: 12px 16px;
+  margin-top: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 400;
+  color: white;
+  width: 75%;
+  max-width: 200px;
+}
+
 /* Globals ================================== */
 
 body {
@@ -101,15 +113,7 @@ body {
 }
 
 .buttonSubmit {
-  background-color: $colorPrimary;
-  padding: 12px 16px;
-  margin-top: 0.5rem;
-  text-align: center;
-  border-radius: 8px;
-  font-weight: 400;
-  color: white;
-  width: 75%;
-  max-width: 200px;  
+  @extend %button;
 }
 
 .errorEmail {

@@ -13,27 +13,31 @@ const mailchimp = require('./src/api/mailchimp');
 /* Server ==================================================================== */
 
 const app = express();
-app.use(express.static(path.join(__dirname, '/src')));
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   console.log(`req received: ${req.url}`);
   next();
 });
+app.use(express.static(path.join(__dirname, '/src')));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.all('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/src/home.html'));
+  res.sendFile(path.join(__dirname, '/src/index.html'));
 });
 
 app.post('/signupWaitlist', (req, res) => {
   const { email } = req.body;
   mailchimp.subscribe(email)
     .then(() => {
-      res.send("Thanks for signing up! We'll let you send you an invite to the beta in the coming weeks!");
+      res.sendFile(path.join(__dirname, '/src/views/confirmation.html'));
     })
     .catch(() => {
-      res.send('Ah sorry, this email has already been signed up!');
+      res.sendFile(path.join(__dirname, '/src/views/signupError.html'));
     });
+});
+
+app.use((req, res, next) => {
+  res.status(404).send('Status 404: Page not found.');
 });
 
 app.listen(port, () => {
