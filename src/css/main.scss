@@ -112,6 +112,14 @@ body {
   max-width: 200px;  
 }
 
+.errorEmail {
+  font-size: 12px;
+  display: block;
+  margin: 4px auto 0px;
+  color: red;
+  text-align: center;
+}
+
 /* Sections ================================== */
 
 .section {
@@ -157,6 +165,11 @@ body {
     0 1px 5px 0 rgba(0,0,0,0.12);
 }
 
+/* Booleans ================================== */
+.inactive {
+  display: none;
+}
+
 /* MEDIA QUERIES ================================== */
 
 // 700 horizontal breakpoint
@@ -179,6 +192,20 @@ body {
     flex-direction: row;
   }
  
+  .inputText, .buttonSubmit {
+    width: auto;
+    max-width: none;
+  }
+  .buttonSubmit {
+    margin-top: 0;
+    margin-left: 4px;
+  }
+
+  .errorEmail {
+    margin-left: 16px;
+    text-align: left;
+  }
+
   .info {
     margin-bottom: 0px;
   }
@@ -192,14 +219,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;  
-  }
-
-  .inputText, .buttonSubmit {
-    width: auto;
-    max-width: none;
-  }
-  .buttonSubmit {
-    margin-top: 0;
-    margin-left: 4px;
   }
 }

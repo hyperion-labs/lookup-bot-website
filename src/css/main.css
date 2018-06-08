@@ -79,6 +79,13 @@ body {
   width: 75%;
   max-width: 200px; }
 
+.errorEmail {
+  font-size: 12px;
+  display: block;
+  margin: 4px auto 0px;
+  color: red;
+  text-align: center; }
+
 /* Sections ================================== */
 .section {
   display: flex;
@@ -112,6 +119,10 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
+/* Booleans ================================== */
+.inactive {
+  display: none; }
+
 /* MEDIA QUERIES ================================== */
 @media screen and (min-width: 700px) {
   .title, .subtitle {
@@ -123,6 +134,15 @@ body {
     padding-top: 2rem; }
   #formWaitlistMain {
     flex-direction: row; }
+  .inputText, .buttonSubmit {
+    width: auto;
+    max-width: none; }
+  .buttonSubmit {
+    margin-top: 0;
+    margin-left: 4px; }
+  .errorEmail {
+    margin-left: 16px;
+    text-align: left; }
   .info {
     margin-bottom: 0px; }
   .subtitle {
@@ -131,10 +151,4 @@ body {
   .sectionDesc {
     display: flex;
     justify-content: center;
-    align-items: center; }
-  .inputText, .buttonSubmit {
-    width: auto;
-    max-width: none; }
-  .buttonSubmit {
-    margin-top: 0;
-    margin-left: 4px; } }
+    align-items: center; } }
