@@ -58,4 +58,7 @@ $gutter: 92px;
 
 .button {
   @extend %button;
+  &:hover {
+    background-color: #2750ae;
+  }
 }
