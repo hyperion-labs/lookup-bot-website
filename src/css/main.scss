@@ -26,6 +26,7 @@ $gutter: 92px;
   color: white;
   width: 75%;
   max-width: 200px;
+  border: none;
 }
 
 /* Globals ================================== */
@@ -104,7 +105,7 @@ body {
 }
 
 .inputText {
-  border: none;
+  border: 0.5px solid lightgrey;
   padding: 12px 16px;
   background-color: $inputBg;
   border-radius: 8px;
@@ -114,6 +115,10 @@ body {
 
 .buttonSubmit {
   @extend %button;
+
+  &:hover {
+    background-color: #2750ae;
+  }
 }
 
 .errorEmail {
